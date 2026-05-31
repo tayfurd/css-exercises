@@ -2,13 +2,20 @@ body,
 html {
   height: 100%;
   margin: 0;
+  --grid-gap: 15px;
+  --grid-padding: 16px;
 }
 
 .container {
   text-align: center;
   height: 100%;
-  padding: 16px;
+  padding: var(--grid-padding);
+  gap: var(--grid-gap);
   box-sizing: border-box;
+  display: grid;
+  grid-template: 10vh 10vh 70vh 10vh / 
+  calc(20vw - var(--grid-padding) - var(--grid-gap)) 
+  calc(80vw - var(--grid-padding) - var(--grid-gap));
 }
 
 .container div {
@@ -22,22 +29,27 @@ html {
 
 .header {
   background-color: #006157;
+  grid-area: 1 / 1 / 2 / 3;
 }
 
 .sidebar {
   background-color: #005B94;
+  grid-area: 2 / 1 / 4  / 1 ;
 }
 
 .nav {
   background-color: #642cde;
+  grid-area: 2 / 2 / 3 / 3;
 }
 
 .article {
   background-color: #7E1DC3;
+  grid-area: 3 / 2 / 4 / 3;
 }
 
 .footer {
   background-color: #393f4d;
+  grid-area: 4 / 1 / 5 / 3;
 }
 
 .article p {
